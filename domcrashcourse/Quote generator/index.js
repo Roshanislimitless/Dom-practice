@@ -432,6 +432,31 @@ function changeQuotes(a){
 }
 changeQuotes();
 
+let addcount = document.querySelector('#addcount');
+let lowercount = document.querySelector('#lowercount');
+let numberP = document.querySelector('#numberP');
+addcount.addEventListener('click', addNumber);
+lowercount.addEventListener('click', decreaseNumber);
+
+let number = 0;
+
+function addNumber(){
+    number++
+    numberP.innerHTML = number;
+    numberP.style.color = 'blue';
+
+    
+
+}
+
+function decreaseNumber(){
+    number--
+    numberP.innerHTML = number;
+    if ( number < 0){
+        numberP.style.color = 'red';
+    }
+}
+
 
 
 
