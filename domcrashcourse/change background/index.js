@@ -30,15 +30,30 @@ document.querySelectorAll('button').forEach(any=>any.style.margin = '200px')
 
 //.................with hex value....................................................
 document.querySelector('button:nth-child(1)').addEventListener('click', changeWithHex);
+document.querySelector('button:nth-child(2)').addEventListener('click', autoChangeWithHex);
+document.querySelector('button:nth-child(3)').addEventListener('click', manualstop);
+document.querySelector('button:nth-child(4)').addEventListener('click', autoChangeWithHex);
+
 const hexValues = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F'];
 
 function changeWithHex(){
+
     let hex = '#';
     for (let i = 0; i < 6; i++) {
         const index = Math.floor(Math.random()*hexValues.length);
         hex += hexValues[index];
         document.body.style.background = hex;
  }
+}
+
+let myInterval;
+
+function autoChangeWithHex(){
+    myInterval = setInterval(changeWithHex, 1000)
+}
+
+function manualstop(){
+    clearInterval(myInterval);
 }
 
 
