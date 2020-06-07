@@ -98,7 +98,7 @@ const callResponse = (objectInfo) => {
     singlecountryData.className = 'inner-container';
 
     const image = document.createElement('img');
-    image.src = `/icons/${objectInfo.data[0].weather.icon}.png`
+    image.src = `icons/${objectInfo.data[0].weather.icon}.png`
     image.style.maxHeight = '80px'
 
     const tempreature = document.createElement('p');
@@ -214,7 +214,7 @@ const callResponseNew = (objectInfo) => {
     singlecountryData.className = 'inner-container';
 
     const image = document.createElement('img');
-    image.src = `/icons/${objectInfo.data[0].weather.icon}.png`
+    image.src = `icons/${objectInfo.data[0].weather.icon}.png`
     image.style.maxHeight = '80px'
 
     const tempreature = document.createElement('p');
