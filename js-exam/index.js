@@ -54,34 +54,6 @@ const countriesList = [{
 //apikey
 const myApiKey = '8d225d0502734c62a9b896007eec0157'
 
-function addNewObject(event) {
-    const nameInput = document.querySelector('#inputForNew1');
-    const latInput = document.querySelector('#inputForNew2');
-    const longInput = document.querySelector('#inputForNew3');
-    event.preventDefault()
-    let a = {
-        name: '',
-        latitude: '',
-        longitude: ''
-
-    }
-    var nameInputValue = nameInput.value;
-    var latInputValue = latInput.value;
-    var longInputValue = longInput.value;
-    a.name = nameInputValue;
-    a.latitude = latInputValue;
-    a.longitude = longInputValue;
-    countriesList.push(a);
-    onSuccessNewSingle();
-}
-const latLong = document.querySelector('#latLong')
-latLong.addEventListener('click', addNewObject)
-
-
-
-
-
-
 const onSuccess = (position) => {
 
     //console.log(position);
@@ -181,6 +153,35 @@ input.addEventListener('keyup', getNode)
 
 //.........................................................................................
 //for fetching the additional cities 
+
+
+function addNewObject(event) {
+    const nameInput = document.querySelector('#inputForNew1');
+    const latInput = document.querySelector('#inputForNew2');
+    const longInput = document.querySelector('#inputForNew3');
+    event.preventDefault()
+    let a = {
+        name: '',
+        latitude: '',
+        longitude: ''
+
+    }
+    const nameInputValue = nameInput.value;
+    const latInputValue = latInput.value;
+    const longInputValue = longInput.value;
+    a.name = nameInputValue;
+    a.latitude = latInputValue;
+    a.longitude = longInputValue;
+    countriesList.push(a);
+    onSuccessNewSingle();
+}
+
+
+
+const latLong = document.querySelector('#latLong')
+latLong.addEventListener('click', addNewObject)
+
+
 const onSuccessNewSingle = (position) => {
 
     const myLatitude = countriesList[countriesList.length - 1].latitude;

@@ -42,7 +42,7 @@ const storeAndCallResponse = (response) => {
 const callResponse = (objectInfo) => {
     console.log(objectInfo)
 const image = document.querySelector('img');
-image.src = `icons/${objectInfo.data[0].weather.icon}.png`
+image.src = `/icons/${objectInfo.data[0].weather.icon}.png`
 
 const temperature = document.querySelector('.temperature-value').firstElementChild
 temperature.innerHTML = `${objectInfo.data[0].temp}ºC `;
